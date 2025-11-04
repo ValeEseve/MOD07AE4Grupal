@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ evento.nombre }}</h1>
+    <p><strong>Fecha:</strong> {{ evento.fecha }}</p>
+    <p><strong>Ubicación:</strong> {{ evento.ubicacion }}</p>
+
+    <h2>Participantes Registrados</h2>
+    {% if participantes %}
+        <ul>
+            {% for participante in participantes %}
+                <li>{{ participante.nombre }} - {{ participante.email }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay participantes registrados para este evento.</p>
+    {% endif %}
+        <a href="">Agregar participante</a>
+        <a href="">Borrar evento</a>
+{% endblock %}

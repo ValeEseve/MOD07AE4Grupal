@@ -15,8 +15,12 @@ class EventoForm(forms.Form):
         return fecha
     
     def __str__(self):
-        return super().__str__()
+        return f"EventoForm: {self.nombre}, {self.fecha}, {self.ubicacion}"
     
 class ParticipanteForm(forms.Form):
     nombre = forms.CharField(required=True)
     email = forms.EmailField(required=True)
+    evento_id = forms.IntegerField(required=True)
+    
+    def __str__(self):
+        return f"ParticipanteForm: {self.nombre}, {self.email}, {self.evento_id}"

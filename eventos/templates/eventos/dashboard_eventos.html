@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for evento in eventos %}
+    <div class="evento-list">
+        <div class="evento-list__datos">
+        <h2><a href="{% url 'detalle_evento' evento.id %}">{{ evento.nombre }}</a></h2>
+        <p>Fecha: {{ evento.fecha }}</p>
+        <p>Ubicación: {{ evento.ubicacion }}</p>
+        </div>
+        <a href="">Agregar participante</a>
+        <a href="">Borrar evento</a>
+    </div>
+{% empty %}
+    <p>No hay eventos registrados.</p>
+{% endfor %}
+{% endblock %}

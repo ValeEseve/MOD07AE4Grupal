@@ -12,6 +12,7 @@ class Evento(models.Model):
 class Participante(models.Model):
     nombre = models.CharField()
     email = models.EmailField()
+    evento = models.ForeignKey(Evento, on_delete=models.CASCADE, related_name='participantes')
 
     def __str__(self):
         return f"{self.nombre} - {self.email}"
