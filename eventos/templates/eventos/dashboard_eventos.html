@@ -9,7 +9,7 @@
         <p>Ubicación: {{ evento.ubicacion }}</p>
         </div>
         <a href="{% url 'registrar_participante' evento.id %}" class="btn btn-secondary">Agregar participante</a>
-        <a href="" class="btn btn-secondary">Borrar evento</a>
+        <a href="{% url 'borrar_evento' evento_id=evento.id %}" class="btn btn-secondary">Borrar evento</a>
     </div>
 {% empty %}
     <p>No hay eventos registrados.</p>

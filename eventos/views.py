@@ -76,3 +76,7 @@ def registrar_participante(request, evento_id):
     })
 
 
+def borrar_evento(request, evento_id):
+    evento = get_object_or_404(Evento, id=evento_id)
+    evento.delete()
+    return redirect('dashboard_eventos')
