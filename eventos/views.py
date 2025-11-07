@@ -47,7 +47,6 @@ def registrar_evento(request):
 
 # registro de participante usando el id de un evento
 def registrar_participante(request, evento_id):
-    mensaje = None  
     evento = get_object_or_404(Evento, id=evento_id)
     if request.method == 'POST':
         participante_form = ParticipanteForm(request.POST)
@@ -73,7 +72,7 @@ def registrar_participante(request, evento_id):
 
     return render(request, 'eventos/registro_participante.html', {
         'participante_form': participante_form,
-        'mensaje': mensaje
+        'evento': evento
     })
 
 
